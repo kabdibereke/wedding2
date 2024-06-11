@@ -1,0 +1,319 @@
+<main>
+  <div class="option">
+    <div class="option-card" appScrollAnimation animationClass="fadeInUp">
+      <audio #audio controls>
+        <source src="/assets/audio/music.mp3" type="audio/mpeg" />
+      </audio>
+      <app-select-button
+        [options]="['Қаз', 'Рус']"
+        [selectedOption]="'Қаз'"
+        [required]="true"
+        (optionSelected)="switchLanguage($event)"
+        size="small"
+        variant="default"
+      ></app-select-button>
+
+      @if(!isPlaying) {
+      <svg-icon
+        (click)="play()"
+        src="/assets/icons/play.svg"
+        class="music"
+      ></svg-icon>
+
+      }@else {
+
+      <svg-icon
+        (click)="pause()"
+        src="/assets/icons/pause.svg"
+        class="music"
+      ></svg-icon>
+      }
+    </div>
+  </div>
+
+  <section class="preview">
+    <div class="preview-texts">
+      <h2
+        class="font-heading-3-bold-white preview-main-text"
+        appScrollAnimation
+        animationClass="fadeInUp"
+      >
+        {{ "INVITATION_TITLE" | translate }}
+      </h2>
+
+      <div class="title-wrapper" appScrollAnimation animationClass="fadeInUp">
+        <svg-icon src="/assets/icons/leaves.svg" class="leaves"></svg-icon>
+
+        <h1 class="font-large-title-white main-title">Данияр & Сания</h1>
+        <app-divider
+          [margin]="false"
+          variant="secondary"
+          class="preview-divider"
+        ></app-divider>
+        <svg-icon
+          src="/assets/icons/leaves.svg"
+          class="leaves leaves-mirrored"
+        ></svg-icon>
+      </div>
+
+      <h3
+        class="font-heading-3-light-white preview-main-text"
+        appScrollAnimation
+        animationClass="fadeInUp"
+      >
+        &#183; 07 07 2024 &#183;
+      </h3>
+
+      
+    </div>
+  </section>
+
+  <!-- <section class="couple">
+    <div class="container">
+      <app-card [header]="'COUPLE_CARD_TITLE' | translate" class="card">
+        <div class="couple-card-wrapper column">
+          <div >
+            <img src="/assets/images/couple_img.png" alt="dd">
+         </div>
+
+          <div class="couple-card-wrapper">
+            <div class="couple-card" appScrollAnimation animationClass="fadeInUp">
+              <h4 class="font-cursive-primary-2">Данияр</h4>
+  
+              <a
+                href="https://www.instagram.com/kasenov.daniyar"
+                target="”_blank”"
+              >
+                <img src="/assets/icons/insta.svg" alt="circle" />
+              </a>
+            </div>
+  
+            <div class="couple-card" appScrollAnimation animationClass="fadeInUp">
+              <h4 class="font-cursive-primary-2">Сания</h4>
+  
+              <a href="https://www.instagram.com/s_tolegenkyzy" target="”_blank”">
+                <img src="/assets/icons/insta.svg" alt="circle" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </app-card>
+
+      <app-divider></app-divider>
+    </div>
+  </section> -->
+
+  <section class="invitation">
+    <div class="container">
+      <h3
+        class="font-heading-3-bold invitation-header"
+        appScrollAnimation
+        animationClass="fadeInUp"
+      >
+        {{ "INVITATION_HEADER" | translate }}
+      </h3>
+
+      <h4
+        class="font-body-1-regular-secondary invitation_subtitle"
+        appScrollAnimation
+        animationClass="fadeInUp"
+      >
+        {{ "INVITATION_SUBTITLE_1" | translate }}
+      </h4>
+
+      <h4
+        class="font-body-1-regular-secondary invitation_subtitle"
+        appScrollAnimation
+        animationClass="fadeInUp"
+      >
+        {{ "INVITATION_SUBTITLE_2" | translate }}
+      </h4>
+
+      <h4
+      class="font-body-1-regular-secondary invitation_subtitle"
+      appScrollAnimation
+      animationClass="fadeInUp"
+    >{{ "INVITATION_SUBTITLE_3" | translate }} 
+    </h4>
+
+      <h4
+        class="font-heading-3-light-secondary-2 invitation_subtitle date"
+        appScrollAnimation
+        animationClass="fadeInUp"
+      >
+        {{ "INVITATION_DATE" | translate }}
+      </h4>
+
+      <h4
+        class="font-body-1-regular-secondary invitation_subtitle"
+        appScrollAnimation
+        animationClass="fadeInUp"
+      >
+        {{ "INVITATION_START" | translate }}
+      </h4>
+
+      <div class="countdown" appScrollAnimation animationClass="fadeInUp">
+        <div class="countdown-cell">
+          <div class="font-heading-1-regular countdown-cell-text">
+            {{ days }}
+          </div>
+          <div class="font-heading-5-regular countdown-cell-text cell-date">
+            {{ "COUNTDOWN_DAYS" | translate }}
+          </div>
+        </div>
+
+        <div class="countdown-cell">
+          <div class="font-heading-1-regular countdown-cell-text">
+            {{ hours }}
+          </div>
+          <div class="font-heading-5-regular countdown-cell-text cell-date">
+            {{ "COUNTDOWN_HOURS" | translate }}
+          </div>
+        </div>
+
+        <div class="countdown-cell">
+          <div class="font-heading-1-regular countdown-cell-text">
+            {{ minutes }}
+          </div>
+          <div class="font-heading-5-regular countdown-cell-text cell-date">
+            {{ "COUNTDOWN_MINUTES" | translate }}
+          </div>
+        </div>
+
+        <div class="countdown-cell">
+          <div class="font-heading-1-regular countdown-cell-text">
+            {{ seconds }}
+          </div>
+          <div class="font-heading-5-regular countdown-cell-text cell-date">
+            {{ "COUNTDOWN_SECONDS" | translate }}
+          </div>
+        </div>
+      </div>
+
+      <div class="card-ceremony">
+        <svg-icon
+          src="/assets/icons/dinner-table.svg"
+          appScrollAnimation
+          animationClass="fadeInUp"
+        ></svg-icon>
+
+        <h4
+          class="font-heading-3-bold-white"
+          appScrollAnimation
+          animationClass="fadeInUp"
+        >
+          {{ "CEREMONY_TITLE" | translate }}
+        </h4>
+
+        <h5
+          class="font-body-1-bold-white"
+          appScrollAnimation
+          animationClass="fadeInUp"
+        >
+          16:00
+        </h5>
+
+        <h4
+          class="font-heading-4-bold-white"
+          appScrollAnimation
+          animationClass="fadeInUp"
+        >
+          {{ "CEREMONY_VENUE" | translate }}
+        </h4>
+
+        <h5
+          class="font-body-1-light-white"
+          appScrollAnimation
+          animationClass="fadeInUp"
+        >
+          {{ "CEREMONY_LOCATION" | translate }}
+        </h5>
+
+        <h5
+          class="font-body-1-bold-white"
+          appScrollAnimation
+          animationClass="fadeInUp"
+        >
+        {{ "CEREMONY_OWNER" | translate }}
+        </h5>
+
+
+        <app-button
+          [fullWidth]="true"
+          [label]="'VIEW_MAP' | translate"
+          (click)="goToMap()"
+          appScrollAnimation
+          animationClass="fadeInUp"
+          icon="location"
+        ></app-button>
+      </div>
+
+      <app-divider></app-divider>
+    </div>
+  </section>
+
+  <section class="wishes">
+    <div class="container">
+      <app-card [header]="'LEAVE_WISHES' | translate" [formGroup]="form">
+        <app-input
+          [label]="'NAME_LABEL' | translate"
+          formControlName="name"
+          appScrollAnimation
+          animationClass="fadeInUp"
+        ></app-input>
+
+        <app-text-area
+          appScrollAnimation
+          animationClass="fadeInUp"
+          [label]="'WISHES_LABEL' | translate"
+          formControlName="wishes"
+        ></app-text-area>
+
+        <app-select-button
+          appScrollAnimation
+          animationClass="fadeInUp"
+          [options]="[yesTranslation, noTranslation]"
+          [selectedOption]="yesTranslation"
+          [required]="true"
+          (optionSelected)="optionSelected($event)"
+          [label]="'ATTEND_LABEL' | translate"
+          variant="default"
+        ></app-select-button>
+
+        <div
+          class="button-wrapper"
+          appScrollAnimation
+          animationClass="fadeInUp"
+        >
+          <app-button
+            [fullWidth]="true"
+            [label]="'SUBMIT' | translate"
+            [disabled]="loading"
+            (clicked)="sendForm()"
+            variant="secondary"
+          ></app-button>
+        </div>
+      </app-card>
+    </div>
+  </section>
+
+  <div class="footer">
+    <div class="footer-wrapper">
+      <div class="content" appScrollAnimation animationClass="fadeInUp">
+        <h5 class="font-heading-5-regular-white">
+          {{ "TG_TITLE" | translate }}
+         
+        </h5>
+
+        <app-button
+          (clicked)="goToTg()"
+          [label]="'TG_BUTTON' | translate"
+          icon="telegram"
+          label="Каналға өту"
+          style="width: fit-content"
+        >
+        </app-button>
+      </div>
+    </div>
+  </div>
+</main>

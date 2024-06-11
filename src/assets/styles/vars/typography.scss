@@ -1,0 +1,210 @@
+@font-face {
+  font-family: "Comfortaa";
+  src: url("../../font/Comfortaa/Comfortaa-Light.woff2") format("woff2"),
+    url("../../font/Comfortaa/Comfortaa-Light.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Comfortaa";
+  src: url("../../font/Comfortaa/Comfortaa-Regular.woff2") format("woff2"),
+    url("../../font/Comfortaa/Comfortaa-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Comfortaa";
+  src: url("../../font/Comfortaa/Comfortaa-Bold.woff2") format("woff2"),
+    url("../../font/Comfortaa/Comfortaa-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Great Vibes";
+  src: url("../../font/GreatVibes/GreatVibes-Regular.woff2") format("woff2"),
+    url("../../font/GreatVibes/GreatVibes-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --font-heading-1-light: 100 61em/73px "Comfortaa", sans-serif;
+  --font-heading-1-regular: 400 61px/73px "Comfortaa", sans-serif;
+  --font-heading-1-bold: 700 61px/73px "Comfortaa", sans-serif;
+
+  --font-heading-2-light: 100 49px/59px "Comfortaa", sans-serif;
+  --font-heading-2-regular: 400 49px/59px "Comfortaa", sans-serif;
+  --font-heading-2-bold: 700 49px/59px "Comfortaa", sans-serif;
+
+  --font-heading-3-light: 100 39px/47px "Comfortaa", sans-serif;
+  --font-heading-3-regular: 400 39px/47px "Comfortaa", sans-serif;
+  --font-heading-3-bold: 700 39px/47px "Comfortaa", sans-serif;
+
+  --font-heading-4-light: 100 31px/37px "Comfortaa", sans-serif;
+  --font-heading-4-regular: 400 31px/37px "Comfortaa", sans-serif;
+  --font-heading-4-bold: 700 31px/37px "Comfortaa", sans-serif;
+
+  --font-heading-5-light: 100 25px/30px "Comfortaa", sans-serif;
+  --font-heading-5-regular: 400 25px/30px "Comfortaa", sans-serif;
+  --font-heading-5-bold: 700 25px/30px "Comfortaa", sans-serif;
+
+  --font-body-1-light: 100 20px/24px "Comfortaa", sans-serif;
+  --font-body-1-regular: 400 20px/24px "Comfortaa", sans-serif;
+  --font-body-1-bold: 700 20px/24px "Comfortaa", sans-serif;
+
+  --font-body-2-light: 100 16px/19px "Comfortaa", sans-serif;
+  --font-body-2-regular: 400 16px/19px "Comfortaa", sans-serif;
+  --font-body-2-bold: 700 16px/19px "Comfortaa", sans-serif;
+
+  --font-body-3-light: 100 13px/16px "Comfortaa", sans-serif;
+  --font-body-3-regular: 400 13px/16px "Comfortaa", sans-serif;
+  --font-body-3-bold: 700 13px/16px "Comfortaa", sans-serif;
+
+  --font-body-4-light: 100 10px/12px "Comfortaa", sans-serif;
+  --font-body-4-regular: 400 10px/12px "Comfortaa", sans-serif;
+  --font-body-4-bold: 700 10px/12px "Comfortaa", sans-serif;
+
+  --font-large-title: 400 120px/140px "Great Vibes", cursive;
+
+  --font-cursive: 400 60px/72px "Great Vibes", cursive;
+}
+
+@mixin font($font) {
+  font: #{$font};
+  color: var(--color-orchid-300);
+
+  &-primary-2 {
+    font: #{$font};
+    color: #0a4f27;
+  }
+
+  &-secondary {
+    font: #{$font};
+    color: var(--color-netral-600);
+  }
+
+  &-secondary-2 {
+    font: #{$font};
+    color: var(--color-netral-500);
+  }
+
+  &-white {
+    font: #{$font};
+    color: white;
+  }
+}
+
+.font-heading-1-regular {
+  @include font(var(--font-heading-1-regular));
+}
+
+.font-heading-1-bold {
+  @include font(var(--font-heading-1-bold));
+}
+
+.font-heading-2-light {
+  @include font(var(--font-heading-2-light));
+}
+
+.font-heading-2-regular {
+  @include font(var(--font-heading-2-regular));
+}
+
+.font-heading-2-bold {
+  @include font(var(--font-heading-2-bold));
+}
+
+.font-heading-3-light {
+  @include font(var(--font-heading-3-light));
+}
+
+.font-heading-3-regular {
+  @include font(var(--font-heading-3-regular));
+}
+
+.font-heading-3-bold {
+  @include font(var(--font-heading-3-bold));
+}
+
+.font-heading-4-light {
+  @include font(var(--font-heading-4-light));
+}
+
+.font-heading-4-regular {
+  @include font(var(--font-heading-4-regular));
+}
+
+.font-heading-4-bold {
+  @include font(var(--font-heading-4-bold));
+}
+
+.font-heading-5-light {
+  @include font(var(--font-heading-5-light));
+}
+
+.font-heading-5-regular {
+  @include font(var(--font-heading-5-regular));
+}
+
+.font-heading-5-bold {
+  @include font(var(--font-heading-5-bold));
+}
+
+.font-body-1-light {
+  @include font(var(--font-body-1-light));
+}
+
+.font-body-1-regular {
+  @include font(var(--font-body-1-regular));
+}
+
+.font-body-1-bold {
+  @include font(var(--font-body-1-bold));
+}
+
+.font-body-2-light {
+  @include font(var(--font-body-2-light));
+}
+
+.font-body-2-regular {
+  @include font(var(--font-body-2-regular));
+}
+
+.font-body-2-bold {
+  @include font(var(--font-body-2-bold));
+}
+
+.font-body-3-light {
+  @include font(var(--font-body-3-light));
+}
+
+.font-body-3-regular {
+  @include font(var(--font-body-3-regular));
+}
+
+.font-body-3-bold {
+  @include font(var(--font-body-3-bold));
+}
+
+.font-body-4-light {
+  @include font(var(--font-body-4-light));
+}
+
+.font-body-4-regular {
+  @include font(var(--font-body-4-regular));
+}
+
+.font-body-4-bold {
+  @include font(var(--font-body-4-bold));
+}
+
+.font-large-title {
+  @include font(var(--font-large-title));
+}
+
+.font-cursive {
+  @include font(var(--font-cursive));
+}

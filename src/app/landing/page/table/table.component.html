@@ -1,0 +1,25 @@
+<div class="table-container">
+  <table id="excel-table">
+    <thead>
+      <tr>
+        <th *ngFor="let column of columns">{{ column }}</th>
+        <th>удалить</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of data">
+        <td>{{ row.pos }}</td>
+        <td>{{ row.name }}</td>
+        <td>{{ row.wishes }}</td>
+        <td [class.isComing]="row.isComing" [class.notComing]="!row.isComing">
+          {{ row.isComing ? "Да" : "Нет" }}
+        </td>
+        <td>
+          <span (click)="deleteGuest(row.id)" class="delete">удалить</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<app-button (clicked)="exportExcel()" label="Скачать  Excel"></app-button>

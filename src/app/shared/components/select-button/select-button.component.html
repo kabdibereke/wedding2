@@ -1,0 +1,19 @@
+<label
+  *ngIf="label"
+  [ngClass]="{ required: required }"
+  class="font-body-1-bold-secondary-2"
+>
+  {{ label }}<span *ngIf="required">*</span>
+</label>
+
+<div class="select-button" [ngClass]="[variant, size]">
+  <button
+    *ngFor="let option of options; let i = index"
+    [class.last]="i === options.length - 1"
+    [class.first]="i === 0"
+    [class.selected]="option === selectedOption"
+    (click)="onSelect(option)"
+  >
+    {{ option }}
+  </button>
+</div>

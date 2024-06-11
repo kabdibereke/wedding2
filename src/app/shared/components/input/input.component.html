@@ -1,0 +1,10 @@
+<div class="input-container">
+  <label
+    *ngIf="label"
+    [ngClass]="{ required: isRequired }"
+    class="font-body-1-bold-secondary-2"
+  >
+    {{ label }}<span *ngIf="isRequired">*</span>
+  </label>
+  <input class="custom-input" [value]="value" (input)="onInput($event)" />
+</div>

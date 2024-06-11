@@ -1,0 +1,55 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.divider-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .divider-leaves {
+    svg {
+      fill: var(--color-orchid-500);
+    }
+  }
+  .flower {
+    svg {
+      fill: var(--color-orchid-500);
+    }
+  }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: var(--color-orchid-500);
+  }
+
+  &.secondary {
+    .divider-leaves {
+      svg {
+        fill: white;
+      }
+    }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: white;
+    }
+
+    .flower {
+      svg {
+        fill: white;
+      }
+    }
+  }
+
+  &.margin {
+    margin-top: 50px;
+  }
+
+  .divider-leaves-mirrored {
+    transform: scaleX(-1);
+  }
+}

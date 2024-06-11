@@ -1,0 +1,21 @@
+<div class="custom-card" [class.padding]="enablePadding">
+  <div class="custom-card-texts">
+    @if(header) {
+    <span
+      class="font-heading-3-bold custom-card-header"
+      appScrollAnimation
+      animationClass="fadeInUp"
+      >{{ header }}</span
+    >
+    } @if(subheader) {
+    <span
+      class="font-body-1-regular"
+      appScrollAnimation
+      animationClass="fadeInUp"
+      >{{ subheader }}</span
+    >
+    }
+  </div>
+
+  <ng-content></ng-content>
+</div>

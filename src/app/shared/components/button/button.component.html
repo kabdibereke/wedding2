@@ -1,0 +1,10 @@
+<button
+  [disabled]="disabled"
+  [ngClass]="variant"
+  [class.fullWidth]="fullWidth"
+  (click)="clicked.emit()"
+  class="custom-button"
+>
+  <svg-icon *ngIf="icon" [src]="'/assets/icons/' + icon + '.svg'"></svg-icon>
+  <span *ngIf="label">{{ label }}</span>
+</button>
